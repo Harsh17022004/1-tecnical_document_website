@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&family=Roboto+Mono&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+    scroll-behavior: smooth;
+}
+
+body,html{
+    height: 100%;
+    width: 100%;
+    background: #4F4557;
+}
+.navbar{
+    height: 70px;
+    background: #393646;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    z-index: 2;
+    top: 0; left: 0;
+}
+.navbar a{
+    color: #F4EEE0;
+    padding: 10px;
+    margin: 0 2px;
+    text-decoration: none;
+    position: relative;
+    /* border: 2px solid yellowgreen; */
+    border-radius: 8px;
+    transition: 1s;
+}
+.navbar a:hover{
+    background: #F4EEE0;
+    color: #000;
+}
+
+.hero{
+    padding: 20px 10%;
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+
+header{
+    font-size: 24px;
+    color: #FF0060;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem !important;
+}
+.main-cont .side{
+    display: flex;
+    flex-direction: column;
+    margin-right: 30px;
+}
+.main-cont .side a{
+    /* border: 2px solid yellowgreen; */
+    padding: 10px;
+    text-decoration: none;
+    margin: 4px;
+    color: #F4EEE0;
+    position: relative;
+    z-index: 1;
+}
+.main-cont .side a::before{
+    content: '';
+    position: absolute;
+    top: 0;left: 0;
+    height: 100%;
+    width: 0;
+    z-index: -1;
+    background: #6D5D6E;
+    transition: .5s;
+}
+.main-cont .side a:hover:before{
+    width: 100%;
+}
+
+.main-doc{
+    height: 80vh;
+    margin-left: 50px;
+    overflow: scroll;
+}
+.main-doc::-webkit-scrollbar{
+    display: none;
+}
+.main-doc p,ul{
+   margin-bottom: 1rem !important;
+   color: #F4EEE0;
+}
+
+.code_cont{
+    background: #6D5D6E;
+    font-family: 'Roboto Mono', monospace;
+    padding: 20px 10%;
+    border-radius: 10px;
+    margin-bottom: 1rem !important;
+}
+
+@media screen and (max-width:760px) {
+    header{
+        font-size: 18px;
+    }
+}
+@media screen and (max-width:500px) {
+    header{
+        font-size: 12px;
+    }
+    p,a,.code_cont{
+        font-size: 10px;
+    }
+    .hero{
+        padding: 10px;
+    }
+    .main-cont .side a{
+        padding: 4px;
+    }
+}
+@media screen and (max-width:300px){
+    .navbar{
+        flex-direction: column;
+        height: 200px;
+    }
+    .main-cont{
+        display: none;
+    }
+    .hero{
+        display: block;
+    }
+}
